@@ -34,9 +34,11 @@ class KalmanFilterBase
         VectorXd m_state;
         MatrixXd m_covariance;
 };
-
-class KalmanFilter : public KalmanFilterBase{
+/*
+class LinearKalmanFilter : public KalmanFilterBase{
     public:
+        LinearKalmanFilter(){}
+        ~LinearKalmanFilter(){}
 
         VehicleState getVehicleState();
         Matrix2d getVehicleStatePositionCovariance();
@@ -47,3 +49,4 @@ class KalmanFilter : public KalmanFilterBase{
         void handleLidarMeasurement(LidarMeasurement meas, const BeaconMap& map);
         void handleGPSMeasurement(GPSMeasurement meas);
 };
+*/

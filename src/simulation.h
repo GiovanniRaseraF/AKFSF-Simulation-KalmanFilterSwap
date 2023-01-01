@@ -2,7 +2,7 @@
 #include <memory>
 #include <vector>
 
-#include "kalmanfilter.h"
+#include "linearkalmanfilter.h"
 #include "display.h"
 #include "car.h"
 #include "beacons.h"
@@ -73,7 +73,7 @@ class Simulation
     private:
 
         SimulationParams m_sim_parameters;
-        KalmanFilter m_kalman_filter;
+        LinearKalmanFilter m_kalman_filter;
         Car m_car;
         BeaconMap m_beacons;
         GyroSensor m_gyro_sensor;
