@@ -1,6 +1,4 @@
-#ifndef INCLUDE_AKFSFSIM_KALMANFILTER_H
-#define INCLUDE_AKFSFSIM_KALMANFILTER_H
-
+#pragma once
 #include <vector>
 #include <Eigen/Dense>
 
@@ -24,7 +22,6 @@ class KalmanFilterBase
         virtual ~KalmanFilterBase(){}
         void reset(){m_initialised = false;}
         bool isInitialised() const {return m_initialised;}
-
     protected:
     
         VectorXd getState() const {return m_state;}
@@ -38,8 +35,7 @@ class KalmanFilterBase
         MatrixXd m_covariance;
 };
 
-class KalmanFilter : public KalmanFilterBase
-{
+class KalmanFilter : public KalmanFilterBase{
     public:
 
         VehicleState getVehicleState();
@@ -50,7 +46,4 @@ class KalmanFilter : public KalmanFilterBase
         void handleLidarMeasurements(const std::vector<LidarMeasurement>& meas, const BeaconMap& map);
         void handleLidarMeasurement(LidarMeasurement meas, const BeaconMap& map);
         void handleGPSMeasurement(GPSMeasurement meas);
-
 };
-
-#endif  // INCLUDE_AKFSFSIM_KALMANFILTER_H

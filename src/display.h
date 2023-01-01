@@ -1,6 +1,4 @@
-#ifndef INCLUDE_AKFSFSIM_DISPLAY_H
-#define INCLUDE_AKFSFSIM_DISPLAY_H
-
+#pragma once
 // System Includes
 #include <memory>
 #include <string>
@@ -74,5 +72,3 @@ class Display
         TTF_Font *mMainFont;
         
 };
-
-#endif //INCLUDE_AKFSFSIM_DISPLAY_H
