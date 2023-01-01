@@ -73,7 +73,11 @@ class Simulation
     private:
 
         SimulationParams m_sim_parameters;
-        LinearKalmanFilter m_kalman_filter;
+
+        std::vector<std::shared_ptr<KalmanFilterBase>> m_kfilters;
+        std::shared_ptr<KalmanFilterBase> m_kalman_filter;
+        int selectedfilter;
+
         Car m_car;
         BeaconMap m_beacons;
         GyroSensor m_gyro_sensor;
