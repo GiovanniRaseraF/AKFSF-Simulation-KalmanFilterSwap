@@ -33,6 +33,16 @@ class KalmanFilterBase
         bool m_initialised;
         VectorXd m_state;
         MatrixXd m_covariance;
+    
+    public:
+        virtual VehicleState getVehicleState() = 0;
+        virtual Matrix2d getVehicleStatePositionCovariance() = 0;
+
+        virtual void predictionStep(double dt) = 0;
+        virtual void predictionStep(GyroMeasurement gyro, double dt) = 0;
+        virtual void handleLidarMeasurements(const std::vector<LidarMeasurement>& meas, const BeaconMap& map) = 0;
+        virtual void handleLidarMeasurement(LidarMeasurement meas, const BeaconMap& map) = 0;
+        virtual void handleGPSMeasurement(GPSMeasurement meas) = 0;
 };
 /*
 class LinearKalmanFilter : public KalmanFilterBase{

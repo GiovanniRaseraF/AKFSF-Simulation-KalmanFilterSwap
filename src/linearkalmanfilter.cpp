@@ -1,4 +1,4 @@
-#include "linearkalmanfilter.h"
+#include "kalmanfilters.h"
 #include "utils.h"
 
 // -------------------------------------------------- //
