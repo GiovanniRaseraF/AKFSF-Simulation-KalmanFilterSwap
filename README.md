@@ -19,6 +19,16 @@ This project will use the Ubuntu 64 20.04.2.0 LTS VM C++ development environment
  ```
  sudo apt install libeigen3-dev libsdl2-dev libsdl2-ttf-dev
  ```
+
+ 0. Install on MAC
+ The process if a bit convoluted so you need to be prepared to understand the build system
+ of the mac
+ ```
+ brew install eigen
+ # install SDL2 and SDL2_ttf from here:
+ # - https://github.com/libsdl-org/SDL/releases
+ # - https://github.com/libsdl-org/SDL_ttf/releases
+ ```
  
  1. Clone the repository
  ```
