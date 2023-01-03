@@ -74,7 +74,25 @@ void Simulation::selectKalmanFilter(unsigned short int index){
 
     if(index >= 3){
         std::cout << "Filter index not valid using index = " << realindex << std::endl;
+	return;
     }
+
+    std::cout << "Selected: ";
+    switch(realindex){
+	case 0:
+		std::cout << "Linear ";
+		break;
+	case 1:
+		std::cout << "Extended ";
+		break;
+	case 2: 
+		std::cout << "Unscented ";
+		break;
+	default:
+		std::cout << "NOT PRESENT ";
+		break;
+    }
+    std::cout << "Kalman Filter" << std::endl;
 
     selectedfilter = realindex;
     reset();
@@ -261,12 +279,13 @@ void Simulation::render(Display& disp)
 
     // Keyboard Input
     x_offset = 10;
-    y_offset = 650;
-    disp.drawText_MainFont("Reset Key: r",Vector2(x_offset,y_offset+stride*0),1.0,{255,255,255});
-    disp.drawText_MainFont("Pause Key: [space bar]",Vector2(x_offset,y_offset+stride*1),1.0,{255,255,255});
-    disp.drawText_MainFont("Speed Multiplier (+/-) Key: [ / ] ",Vector2(x_offset,y_offset+stride*2),1.0,{255,255,255});
-    disp.drawText_MainFont("Zoom (+/-) Key: + / - (keypad)",Vector2(x_offset,y_offset+stride*3),1.0,{255,255,255});
-    disp.drawText_MainFont("Motion Profile Key: 1 - 9,0",Vector2(x_offset,y_offset+stride*4),1.0,{255,255,255});
+    y_offset = 600;
+    disp.drawText_MainFont("Change Filter: l [linear], e [extended], u [unscented]", Vector2(x_offset, y_offset+stride*0), 1.0, {255, 255, 255});
+    disp.drawText_MainFont("Reset Key: r",Vector2(x_offset,y_offset+stride*1),1.0,{255,255,255});
+    disp.drawText_MainFont("Pause Key: [space bar]",Vector2(x_offset,y_offset+stride*2),1.0,{255,255,255});
+    disp.drawText_MainFont("Speed Multiplier (+/-) Key: [ / ] ",Vector2(x_offset,y_offset+stride*3),1.0,{255,255,255});
+    disp.drawText_MainFont("Zoom (+/-) Key: + / - (keypad)",Vector2(x_offset,y_offset+stride*4),1.0,{255,255,255});
+    disp.drawText_MainFont("Motion Profile Key: 1 - 9,0",Vector2(x_offset,y_offset+stride*5),1.0,{255,255,255});
 
 
     // Filter Error State
