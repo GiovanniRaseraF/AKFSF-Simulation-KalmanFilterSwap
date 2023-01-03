@@ -34,7 +34,6 @@ void Simulation::reset()
     m_is_paused = false;
 
     m_kalman_filter = m_kfilters[selectedfilter % 3]; 
-    selectedfilter++;
     m_kalman_filter->reset();
 
     m_gps_sensor.reset();
@@ -69,6 +68,17 @@ void Simulation::reset()
     std::cout << "Simulation: Reset" << std::endl;
 }
 
+
+void Simulation::selectKalmanFilter(unsigned short int index){
+    unsigned short int realindex = index % 3;
+
+    if(index >= 3){
+        std::cout << "Filter index not valid using index = " << realindex << std::endl;
+    }
+
+    selectedfilter = realindex;
+    reset();
+}
 
 void Simulation::update()
 {

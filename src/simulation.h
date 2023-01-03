@@ -69,6 +69,7 @@ class Simulation
         void togglePauseSimulation();
         bool isPaused();
         bool isRunning();
+        void selectKalmanFilter(unsigned short int index);
 
     private:
 
